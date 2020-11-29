@@ -27,7 +27,7 @@ operations.forEach(item => item.addEventListener('click', () => checkResult(item
 cancel.addEventListener('click', () => displayContent(''));
 
 const opArray = (array) => {
-    return array.filter(item => !(parseFloat(item) >= 0)).filter(item => item !== '.');
+    return array.filter(item => Number.isNaN(parseFloat(item))).filter(item => item !== '.');
 }
 
 const multiSplit = (element, separator) => {
@@ -40,10 +40,11 @@ const multiSplit = (element, separator) => {
 }
 
 const symbols = ['+', '-', 'x', '÷'];
+let allNumbers;
 const numberArray = (text) => {
-    let numbers = multiSplit(text, symbols);
-    numbers = numbers.map(item => parseFloat(item));
-    return numbers;
+    allNumbers = multiSplit(text, symbols);
+    const numbers = allNumbers.map(item => parseFloat(item));
+    return allNumbers, numbers;
 }
 
 const resultCount = (num, op) => {
@@ -63,7 +64,8 @@ const resultCount = (num, op) => {
 }
 
 const resultDisplay = (numbers, operation, result) => {
-    if (Number.isNaN(result) || [...display.textContent].filter(item => (item === '.')).length > 1) {
+    const includesDot = allNumbers.filter(item => item.includes('.')).map(item => [...item]);
+    if (Number.isNaN(result) || includesDot.map(item=>item.filter(item => item === '.').length >1).includes(true)) {
         display.textContent = 'ERROR';
     } else {
         display.textContent = resultCount(numbers, operation);
