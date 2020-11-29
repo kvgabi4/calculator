@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+
+html {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /* text-align: center; */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    /* justify-content: center; */
+}
+
+h3 {
+    width: 18rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+.calculator {
+    align-items: center;
+    border: .1px solid rgb(190, 190, 190);
+    border-radius: .2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    margin: 2rem;
+    width: 18rem;
+}
+
+.display {
+    background-color: rgb(245, 245, 245);
+    border: .1px solid rgb(206, 206, 206);
+    border-radius: .2rem;
+    height: 3rem;
+    letter-spacing: .1rem;
+    margin: .5rem;
+    padding: 1rem;
+    text-align: right;
+    width: 15.5rem;
+}
+
+.operation-container {
+    display: flex;
+}
+
+.operation {
+    background-color: rgb(218, 216, 216);
+    border: .1px solid rgb(190, 190, 190);
+    border-radius: .2rem;
+    height: 2rem;
+    line-height: 2rem;
+    margin: .25rem;
+    text-align: center;
+    width: 3.5rem;
+}
+
+.operation:hover {
+    background-color: rgb(230, 230, 230);
+    border: .2px solid  rgb(67, 145, 247);
+}
+
+.numbers-equal {
+    align-content: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 16rem;
+}
+
+.numbers-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 12rem;
+}
+
+.numbers, .dot, .cancel {
+    border: .1px solid rgb(206, 206, 206);
+    border-radius: .2rem;
+    background-color: rgb(238, 238, 238);
+    height: 2rem;
+    line-height: 2rem;
+    margin: .25rem;
+    text-align: center;
+    width: 3.5rem;
+}
+
+.numbers:hover, .dot:hover, .cancel:hover {
+    background-color: rgb(225, 225, 225);
+    border: .2px solid  rgb(67, 145, 247);
+}
+
+.equal-container {
+    align-items: center;
+    border-radius: .2rem;
+    background-color: rgb(67, 145, 247);
+    display: flex;
+    justify-content: center;
+    line-height: 100%;
+    margin: .25rem;
+    width: 3.5rem;
+}
+
+.equal-container:hover {
+    background-color: rgb(21, 112, 231);
+    border: .5px solid  rgb(0, 25, 100);
+}
+
+
+.equal {
+    color: white;
+}
